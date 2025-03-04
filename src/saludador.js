@@ -1,4 +1,4 @@
-function saludar(nombre,genero,edad) {
+function saludar(nombre,genero,edad,idioma) {
     let saludo = "Hola";
 
     const hora = new Date().getHours();
@@ -16,6 +16,16 @@ function saludar(nombre,genero,edad) {
 
     if (nombre) {
         saludo += ` ${nombre}`;
+    }
+
+    if (idioma === "en") {
+        saludo = saludo.replace("Buenos días", "Good morning")
+                       .replace("Buenas tardes", "Good afternoon")
+                       .replace("Buenas noches", "Good evening")
+                       .replace("joven", "Mr.")
+                       .replace("señorita", "Miss.")
+                       .replace("señor", "Mr.")
+                       .replace("señora", "Mrs.");
     }
 
 
